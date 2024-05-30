@@ -1,3 +1,41 @@
+```mermaid
+erDiagram
+    ATORES {
+        int Id
+        varchar PrimeiroNome
+        varchar UltimoNome
+        varchar Genero
+    }
+    FILMES {
+        int Id
+        varchar Nome
+        int Ano
+        int Duracao
+    }
+    ELENCOFILME {
+        int Id
+        int IdAtor
+        int IdFilme
+        varchar Papel
+    }
+    GENEROS {
+        int Id
+        varchar Genero
+    }
+    FILMESGENERO {
+        int Id
+        int IdGenero
+        int IdFilme
+    }
+
+    ATORES ||--o{ ELENCOFILME: "interpreta"
+    FILMES ||--o{ ELENCOFILME: "contém"
+    FILMES ||--o{ FILMESGENERO: "pertence"
+    GENEROS ||--o{ FILMESGENERO: "classifica"
+```
+
+
+
 # DIO - Trilha .NET - Banco de Dados
 www.dio.me
 
